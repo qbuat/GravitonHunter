@@ -1,0 +1,126 @@
+#!/bin/env python
+
+import os
+import sys
+import glob
+import string
+import os.path
+
+###############################################################################################################
+def main():
+  try:
+    inputpath  = sys.argv[1]
+    outinclude = sys.argv[2]
+    outlinkdef = sys.argv[3]
+  except:
+    return
+  files = glob.glob(inputpath+'/*.h*')
+  classes=[]
+  namespaces=[]
+  enums=[]
+  structs=[]
+  for f in files:
+    parsefile(f,classes,namespaces,enums,structs)
+  makelinkdef(outlinkdef,set(classes),set(namespaces),set(enums),set(structs))
+  makeinclude(outinclude,files)
+  
+############################################################################################################### 
+
+def makelinkdef(outlinkdef,classes,namespaces,enums,structs):
+  file = open(outlinkdef,'w')
+  file.write("// This linkdef has been automatically created - do not modify unless you know what you're doing (or do, whoever cares !)\n")
+  file.write("#ifdef __CINT__\n\n")
+  file.write("#pragma link off all globals;\n")
+  file.write("#pragma link off all classes;\n")
+  file.write("#pragma link off all functions;\n")
+  file.write("#pragma link C++ nestedclasses;\n\n")
+  for k in namespaces:
+    file.write("#pragma link C++ namespace "+k+";\n")
+  for k in enums:
+    file.write("#pragma link C++ enum "+k+";\n")
+  for k in structs:
+    file.write("#pragma link C++ struct "+k+"+;\n")
+  for k in classes:
+    file.write("#pragma link C++ class "+k+"+;\n")
+  file.write("\n#endif\n")  
+  file.close()
+
+  
+###############################################################################################################
+
+def makeinclude(outinclude,files):
+  file = open(outinclude,'w')
+  file.write("// This include has been automatically created - do not modify unless you know what you're doing (or do, whoever cares !)\n")
+  for f in files: file.write('#include "'+os.path.basename(f)+'"\n')
+  file.close()  
+
+###############################################################################################################
+
+def parsefile(file, classes, namespaces, enums, structs):
+  f = open(file)
+  mergelines = cleanandmerge(f.readlines())
+  blocs = splitblocs(mergelines,'{','}')
+  portee = []
+  for i,l in enumerate(blocs): 
+    if len(l)==0 : continue
+    if l[0]=='{': 
+      keys = lastwords(blocs[i-1])
+      try : portee.append(keys[1])
+      except : portee.append('')
+      if keys[0] == 'class'     : 
+        classes.append(string.join(portee,'::'))
+      elif keys[0] == 'enum'      : 
+        enums.append(string.join(portee,'::'))    
+      elif keys[0] == 'namespace' :
+        namespaces.append(string.join(portee,'::'))
+      elif keys[0] == 'struct' :
+        structs.append(string.join(portee,'::'))        
+    if l[0]=='}': portee = portee[:-1]     
+
+###############################################################################################################
+def splitblocs(s, c1, c2):
+  countup = 0
+  listacc=[]
+  step1=string.split(s,c1)
+  step2=[]
+  for i,x in enumerate(step1): ### Loop on elements 
+    if i>0 :  
+      listacc.append(countup)
+      step2.append(c1+str(listacc[-1]) )
+      countup+=1 
+    tmp=string.split(x,c2)
+    for j,y in enumerate(tmp):
+      if j>0: 
+        step2.append(c2+str(listacc[-1]))
+        listacc=listacc[:-1]
+      step2.append(y)    
+  return step2
+
+################################################################################################################
+def lastwords(line):
+  w=[' ',' ',' ']
+  try:
+    w[3-len(string.split(line)[-3:]):] = string.split(line)[-3:]
+  except:
+    pass
+  if w[1] in ['public' , 'protected' , 'private' , ':', ';']:
+    u = int(w[0]==',' or w[0]==':')
+    w[1:] = lastwords(string.join(string.split(line)[:-2-u]))
+  return w[1:]  
+
+################################################################################################################
+
+def cleanandmerge(line):
+  res = []
+  for l in line:
+    sss = string.split(l,"//")
+    try : res.append(sss[0])
+    except : pass
+  
+  for l in res:
+    all =   string.join(res) 
+    tmp = splitblocs(all, "/*", "*/")
+    for i,blup in enumerate(tmp):
+      pass
+  return string.join(res) 
+main()

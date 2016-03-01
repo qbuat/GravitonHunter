@@ -1,0 +1,1 @@
+/afs/in2p3.fr/home/j/jbrown/mysps/DATASETS/data12_8TeV.00201489.debugrec_hltacc.merge.NTUP_PHOTON.g1_r4065_p1278_p1344_tid01294943_00/NTUP_PHOTON.01294943._000001.root.1

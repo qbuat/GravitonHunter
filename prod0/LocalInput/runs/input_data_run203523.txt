@@ -1,0 +1,1 @@
+root://ccxrootdatlas.in2p3.fr:1094/pnfs/in2p3.fr/data/atlas/atlasgroupdisk/phys-higgs/rucio/data12_8TeV/32/e7/NTUP_PHOTON.01143052._000001.root.1,root://ccxrootdatlas.in2p3.fr:1094/pnfs/in2p3.fr/data/atlas/atlasgroupdisk/phys-higgs/rucio/data12_8TeV/61/0f/NTUP_PHOTON.01143052._000002.root.1

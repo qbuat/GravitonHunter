@@ -1,0 +1,43 @@
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<bool>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<char>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<short>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<long>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<unsigned-char>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<unsigned-short>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<unsigned-int>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<unsigned-long>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<float>=vector.dll vectorbool.dll> for level 0; ignored
+Warning in <TEnvRec::ChangeValue>: duplicate entry <Library.vector<double>=vector.dll vectorbool.dll> for level 0; ignored
+[?1034hOBJ: TCut	CUT	(((pT_L >= 50 && pT_SL >= 50)&&(IsTight_L == 1 && IsTight_SL == 1))&&(Iso_L_mod <= 8 && Iso_SL_mod <= 8))&&(mgg >= 179.1034055)
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Info in <TCanvas::Print>: pdf file ./plots/dummy_id.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_pt_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_pt_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_conv_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_conv_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_pt_corr_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_pt_corr_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_ed_med_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_ed_med_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_uncor_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_uncor_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_corr_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_corr_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_l_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_iso_sl_shape.pdf has been created
+Info in <TCanvas::Print>: pdf file ./plots/dummy_mgg_comparison.pdf has been created
+54545.0 52155.0
+50051.0 48024.0
+60522.0 57664.0
+60521.0 57663.0
+55959.0 53304.0
+51289.0 48942.0
+57734.0 55019.0
+53743.0 51266.0
+58.5103922281
+58.6435916555
+57749.0 55034.0
+53745.0 51265.0
+58.5103922281
+58.6435916555

@@ -1,0 +1,1 @@
+dcap://ccdcapatlas.in2p3.fr:22125/pnfs/in2p3.fr/data/atlas/atlasgroupdisk/phys-higgs/data12_8TeV/NTUP_PHOTON/r4065_p1278_p1341_p1344_p1345/data12_8TeV.00203191.physics_Egamma.merge.NTUP_PHOTON.r4065_p1278_p1341_p1344_p1345_tid01143041_00/NTUP_PHOTON.01143041._000001.root.1
